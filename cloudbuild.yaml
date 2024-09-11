@@ -1,0 +1,25 @@
+steps:
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/serendiptr-app/serendiptr-server:latest'
+      - '.'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/serendiptr-app/serendiptr-server:latest']
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'serendiptr-server'
+      - '--image=gcr.io/serendiptr-app/serendiptr-server:latest'
+      - '--region=us-west1'
+
+images: 
+  - 'gcr.io/serendiptr-app/serendiptr-server:latest'
+options:
+  logging: CLOUD_LOGGING_ONLY

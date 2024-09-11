@@ -1,0 +1,34 @@
+{
+  "name": "im_dev_portfolio",
+  "version": "1.0.0",
+  "description": "Ian's development work portfolio",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianemcallister/IM_Dev_Portfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Ian McAllister",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ianemcallister/IM_Dev_Portfolio/issues"
+  },
+  "homepage": "https://github.com/ianemcallister/IM_Dev_Portfolio#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.0",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}
