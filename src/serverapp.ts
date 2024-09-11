@@ -5,7 +5,7 @@
 //  Define dependencies
 import express, { Express } from "express";
 import bodyParser from 'body-parser';
-import rootRoutes from '@routes/root/root';
+import path from 'path';
 
 //  Config
 const app: Express  = express();
@@ -15,8 +15,9 @@ const isProduction = process.env.IS_PRODUCTION?.toLowerCase() === 'true';
 
 app.use(bodyParser.json());
 
-// Routes
-app.use('/', rootRoutes);
+// Serve static files from the 'dist' folder
+const staticPath = path.join(__dirname, '../static/portfolio');
+app.use(express.static(staticPath));
 
 /*
 *   OPEN UP PORT FOR LISTENING
