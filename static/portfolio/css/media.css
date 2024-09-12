@@ -7,13 +7,6 @@
     }
 }
 
-/* Screens that are 576px or smaller will not display the background video */
-@media screen and (max-width: 576px) {
-    #Typing_Video {
-        display: none;
-    }
-}
-
 /* Screens that are 576px or smaller will display navbar links equally distributed */
 @media screen and (max-width: 576px) {
     .Navbar a{
@@ -21,6 +14,15 @@
         font-size: 12px;
     }
 }
+
+/* Screens that are 576px or smaller will not display the background video */
+@media screen and (max-width: 576px) {
+    #Typing_Video {
+        display: none;
+    }
+}
+
+
 
 /* Screen 576 and smaller will display a scroll bar if the text overflows the column height */
 @media screen and (max-width: 576px) {

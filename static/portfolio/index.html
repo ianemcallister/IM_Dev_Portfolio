@@ -40,13 +40,28 @@
         </div>
 
         <!-- Video text -->
-        <div class="Video_Text"></div>
+        <div class="Video_Text">
+            <h1 class="white-text">Ian McAllister's Portfolio</h1>
+            <strong>
+                <p class="center">
+                    <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
+                        <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
+                        <br>field of battle and to command such unswervingly dutiful actors or troops.
+                    </q>
+                    <br> -Joseph Weizenbaum
+                    <br>
+                    <br> My name is Ian McAllister. Welcome to my portfolio website. On it, I will tell you about my background and experience.
+                    <br>
+                    <br> Thank you for stopping by and enjoy!
+                </p>
+            </strong>
+        </div>
 
         <!-- About section-->
          <div class="row" id="About">
             <!-- Left column-->
             <div class="column_2">
-                <img src="assets/code.jpg" alt="Code image" id="codeImage">
+                <img src="assets/headshot.png" alt="Code image" class="">
             </div>
             <!-- Right column -->
             <div class="column_1">
@@ -58,5 +73,67 @@
                 </p>
             </div>
          </div>
+
+         <!-- GitHub section -->
+        <div class="row" id="GitHub">
+            <!-- Left column -->
+            <div class="column_1">
+                <h1>GitHub</h1>
+                <p>
+                    You can view coding projects on my GitHub profile here:
+                    <br>
+                    <p class="center"><a href="https://github.com/ianemcallister" target="_blank">Ian McAllister</a></p>
+                </p>
+            </div>
+            <!-- Right column -->
+            <div class="column_2">
+                <a href="https://github.com/ianemcallister" target="_blank">
+                    <img src="assets/GitHub.png" alt="GitHub logo" class='' id="codImage">
+                </a>
+            </div>
+        </div>
+
+        <!-- Content section -->
+        <div class="row" id="Contact">
+            <!-- Contact image, left column -->
+            <div class="column_2 column_tall">
+                <img src="assets/code.jpg" alt="Code image" class="">
+            </div>
+            <!-- Contact form, right column -->
+            <div class="column_1 column_tall">
+                <h1>Contact</h1>
+                <!-- This specifies wehre and how to send the form data -->
+                <form action="https://formspree.io/f/mvgpngja" method="POST">
+                    <!-- Name -->
+                    <label for="name">Name:</label>
+                    <input  type="text" 
+                            placeholder="Please enter your full name here."
+                            id="name"
+                            name="name">
+                    
+                    <!-- Email -->
+                    <label for="email">E-mail:</label>
+                    <input  type="text"
+                            id="email"
+                            name="email"
+                            placeholder="Please enter your email here.">
+
+                    <!-- Message -->
+                    <label for="message">Message:</label>
+                    <textarea   name="message" 
+                                id="contactMessage"
+                                placeholder="Enter a message here">
+                    </textarea>
+                    <input type="submit" value="Submit" class="btn">
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer section -->
+        <footer>
+            <p>
+                <p class="center">&copy; Ian McAllister</p>
+            </p>
+        </footer>
     </body>
 </html>

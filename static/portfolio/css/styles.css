@@ -1,4 +1,96 @@
 
+/*Font Passion One from fonts.google.com*/
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+/*Font Nunito Sans from fonts.google.com*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=SUSE:wght@100..800&display=swap');
+
+/* Creates global CSS variables that can be reused throught the file */
+:root {
+    --main-font-family: "SUSE", sans-serif;
+    --secondary-font-family: "Nunito Sans", sans-serif;
+}
+
+
+/* GENERAL STYLING */
+body {
+    margin: 0%;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: var(--main-font-family);
+    text-align: center;
+    margin-top: 3%;
+    color: #1a1a1a;
+}
+
+h1:hover {
+    filter: grayscale(5%);
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+
+.white-text {
+    color: #fff;
+}
+
+p {
+    font-family: var(--secondary-font-family);
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+p:hover {
+    transition: transform 1s;
+    transform: scale(1.01);
+}
+
+.center {
+    text-align: center;
+}
+
+.center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+
+/* Quotation element */
+q{
+    font-style: italic;
+}
+
+img {
+    filter: grayscale(75%);
+    border-radius: 8px;
+    max-width: 100%;
+    height: 340px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img:hover {
+    filter: grayscale(5%);
+    transition: transform 1s;
+    transform: scale(1.1);
+}
+
+footer {
+    padding: 2%;
+    background-color: white;
+}
+
+form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-family: var(--main-font-family);
+}
+
 
 /* NAVBAR STYLING */
 .Navbar {
@@ -54,6 +146,22 @@
     z-index: -1;
 }
 
+.Video_Text {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    width: 100%;
+    padding: 20px;
+    position: 20px;
+    position: relative;
+    -webkit-animation: moveVideoText 5.75s;
+    animation: moveVideoText 5.75s;
+}
+
+@keyframes moveVideoText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
+
 /* TABLE STYLING */
 * {
     box-sizing: border-box;
@@ -77,7 +185,51 @@
     background-color: #4d4d4d;
 }
 
-/* ABOUT SECTION */
-#codeImage {
-    filter: grayscale(100%);
+.column_tall {
+    padding-top: 3.5%;
+    height: 450px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Contact Form Styling */
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: 6px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: var(--secondary-font-family);
+}
+
+input[type=text]:hover, textarea {
+    box-shadow: 0 0 5px #00004d inset;
+}
+
+input[type=submit] {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--secondary-font-family);
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.5);
+    transition: transform 1.5s;
 }
