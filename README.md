@@ -31,3 +31,7 @@ I wanted to demonstrate my proficiencies with a handful of technolgies so have c
 
 ### DNS Registration
 While the DNS has been mapped from squarespace domains to google cloud run at the time of this writing verification was still pending.
+
+If this has not yet mapped, the live site can be found here:
+
+[https://portfolio-server-693935995997.us-west1.run.app](https://portfolio-server-693935995997.us-west1.run.app)
