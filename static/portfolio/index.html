@@ -1,9 +1,62 @@
 <!DOCTYPE html>
 <html>
+    <!-- Head -->
     <head>
-
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Ian McAllister Portfolio</title>
+        <!-- Styling CSS-->
+        <link   rel="stylesheet" 
+                type="text/css" 
+                href="css/styles.css">
+        <!-- Media Specific CSS-->
+        <link   rel="stylesheet" 
+                type="text/css" 
+                href="css/styles.css">
     </head>
-    <body>
-        <h1>Hello World</h1>
+
+    <!-- Body -->
+    <body class="main">
+
+        <!--Navbar-->
+        <div class="Navbar">
+            <a class="active" href="#Home">Home</a>
+            <a href="#About">About</a>
+            <a href="#GitHub">GitHub</a>
+            <a href="#Contact">Contact</a>
+        </div>
+
+        <!-- Background Video -->
+        <div class="home">
+            <video  src="assets/video/Typing.mp4"
+                    type="video/mp4"
+                    autoplay
+                    muted
+                    loop
+                    id="Typing_Video">
+                <!-- Display message if video fails to run -->
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+
+        <!-- Video text -->
+        <div class="Video_Text"></div>
+
+        <!-- About section-->
+         <div class="row" id="About">
+            <!-- Left column-->
+            <div class="column_2">
+                <img src="assets/code.jpg" alt="Code image" id="codeImage">
+            </div>
+            <!-- Right column -->
+            <div class="column_1">
+                <h1>About</h1>
+                <p>
+                    I'm a software developer who loves to code!
+                    <br>
+                    I'm a full-stack developer and would love to work with you on your project. <a href="#contact">Contact</a> me below!
+                </p>
+            </div>
+         </div>
     </body>
 </html>
