@@ -1,3 +1,5 @@
+/********* GENERAL STYLING *********/
+
 
 /*Font Passion One from fonts.google.com*/
 @import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
@@ -12,9 +14,23 @@
 }
 
 
-/* GENERAL STYLING */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0%;
+    opacity: 1;
+    transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: Avant Garde, Helvetica;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+body.fade-out {
+    opacity: .1;
 }
 
 h1 {
@@ -33,6 +49,7 @@ h1:hover {
 
 .white-text {
     color: #fff;
+    padding-top: 10vh;
 }
 
 p {
@@ -58,6 +75,12 @@ p:hover {
     transform: scale(1.1);
 }
 
+a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 /* Quotation element */
 q{
     font-style: italic;
@@ -67,16 +90,18 @@ img {
     filter: grayscale(75%);
     border-radius: 8px;
     max-width: 100%;
-    height: 340px;
+    max-height: 100%;
+    /*height: 340px;*/
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    margin: auto auto auto auto
 }
 
 img:hover {
     filter: grayscale(5%);
-    transition: transform 1s;
-    transform: scale(1.1);
+    /*transition: transform 1s;
+    transform: scale(1.1);*/
 }
 
 footer {
@@ -84,15 +109,9 @@ footer {
     background-color: white;
 }
 
-form {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 10px;
-    font-family: var(--main-font-family);
-}
+/***** End of General Styling *****/
 
-
-/* NAVBAR STYLING */
+/***** Navbar Styling *****/
 .Navbar {
     overflow: hidden;
     background-color: black;
@@ -118,10 +137,10 @@ form {
     padding: 14px 16px;
     text-decoration: none;
     font-family: Avant Garde, Helvetica;
-    font-size: 20px;
+    font-size: 1.5vw;
     text-align: center;
     position: relative;
-    -webkit-animation: noveNavText 5.75s;
+    -webkit-animation: moveNavText 5.75s;
     animation: moveNavText 5.75s;
 }
 
@@ -131,12 +150,20 @@ form {
     to {top: 0vw;}
 }
 
+.Navbar a:hover {
+    background-color: #f4f4f4;
+    color: black;
+    cursor: pointer;
+    transition: 0.5s ease-in;
+}
+
 /* Navbar home button */
 .Navbar a.active {
     background-color: darkgray;
 }
+/***** End of Navbar Styling *****/
 
-/* VIDEO STYLING */
+/***** Video Styling *****/
 /* Formatting for background video */
 #Typing_Video {
     position: fixed;
@@ -150,8 +177,10 @@ form {
     background: rgba(0,0,0,0.5);
     color: white;
     width: 100%;
-    padding: 20px;
-    position: 20px;
+    height: 100vh;
+    /*padding: 20px;*/
+    padding-top: 2vh;
+    /*position: 20px;*/
     position: relative;
     -webkit-animation: moveVideoText 5.75s;
     animation: moveVideoText 5.75s;
@@ -161,6 +190,108 @@ form {
     from {top: -100vw;}
     to {top: 0vw;}
 }
+/***** End of Video Styling *****/
+
+/***** Slideshow Styling *****/
+#Slideshow_Background {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.mySlides{
+    display: none;
+}
+
+#Slideshow_Container{
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+#Slideshow_Container a {
+    text-decoration: none;
+}
+
+.Slideshow_Images {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0,0,0, .75);
+    width: 100%; 
+}
+
+.Previous, .Next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: darkgray;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+.Next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.Previous:hover, .Next:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+}
+
+.text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: var(--secondary-font-family);
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0,0,0,0.75);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+.active, .dot:hover {
+    background-color: black;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+/***** End Slideshow Styling *****/
 
 /* TABLE STYLING */
 * {
@@ -170,24 +301,21 @@ form {
 .column_1 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 3%;
-    height: 400px;
+    /*padding: 10px;
+    padding-top: 3%;*/
+    padding: 1.6%;
+    height: 450px;
     background-color: #f2f2f2;
 }
 
 .column_2 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 1.9%;
-    height: 400px;
-    background-color: #4d4d4d;
-}
-
-.column_tall {
-    padding-top: 3.5%;
+    /*padding: 10px;
+    padding-top: 1.9%;*/
+    padding: 1.6%;
     height: 450px;
+    background-color: #4d4d4d;
 }
 
 .row:after {
@@ -195,9 +323,98 @@ form {
     display: table;
     clear: both;
 }
+/***** End of Table Styling *****/
+
+/***** Contact Form Styling *****/
+.Pop_Up_Button {
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: white;
+    color: black;
+    border: solid black;
+    cursor: pointer;
+    -webkit-animation: movePopup 5s;
+    animation: movePopup 5s;
+}
+
+@keyframes movePopup {
+    from {right: -40vw;}
+    to {right: 1.75vw;}
+}
+
+@-webkit-keyframes movePopup {
+    from {right: -40vw;}
+    to {right: 1.75vw;}
+}
+
+.form-popup {
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+}
+
+.form-container {
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: white;
+}
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background: gainsboro;
+    font-size: 1vw;
+}
+
+button {
+    font-family: var(--main-font-family);
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+button:hover, .form-container .btn:hover {
+    color: white;
+    background-color: black;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: silver;
+}
+
+.form-container .cancel {
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+.form-container .cancel:hover {
+    color: white;
+    background-color: darkred;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}
+/***** End of Contact Form Styling *****/
+
+
+/*.column_tall {
+    padding-top: 3.5%;
+    height: 450px;
+}*/
+
 
 /* Contact Form Styling */
-input[type=text], textarea {
+/*input[type=text], textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -233,3 +450,10 @@ input[type=submit]:hover {
     transform: scale(1.5);
     transition: transform 1.5s;
 }
+
+form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-family: var(--main-font-family);
+}*/

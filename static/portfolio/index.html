@@ -21,9 +21,10 @@
         <!--Navbar-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
         <!-- Background Video -->
@@ -57,11 +58,68 @@
             </strong>
         </div>
 
+        <!-- Slideshow section added -->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+                    <!-- Slide 1 of 6 -->
+                    <div class="mySlides fade">
+                        <img src="assets/headshot.png" class="Slideshow_Images" alt="Headshot">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+
+                    <!-- Slide 2 of 6 -->
+                    <div class="mySlides fade">
+                        <img src="assets/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS & JavaScript" class="Slideshow_Images">
+                        <div class="text">I am a full-stack software developer, <br> trained in: <br>HTML, CSS, JavaScript,</div>
+                    </div>
+
+                    <!-- Slide 3 of 6 -->
+                    <div class="mySlides fade">
+                        <img src="assets/Python.png" alt="Python" class="Slideshow_Images">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+
+                    <!-- Slide 4 of 6 -->
+                    <div class="mySlides fade">
+                        <img src="assets/R_logo.svg.png" alt="R" class="Slideshow_Images">
+                        <div class="text">R</div>
+                    </div>
+
+                    <!-- Slide 5 of 6 -->
+                    <div class="mySlides fade">
+                        <img src="assets/SQL_and_Database.jpg" alt="SQL" class="Slideshow_Images">
+                        <div class="text">back end development, databases and SQL.</div>
+                    </div>
+
+                    <!-- Slide 6 of 6 -->
+                    <div class="mySlides fade">
+                        <img src="assets/Coding_1.jpg" alt="Coding" class="Slideshow_Images">
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                    </div>
+                    <!-- Previous and next buttons -->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br> <!-- Adds a space between the slideshow images and the dots -->
+
+                <!-- Slideshow dots (these are another way for users to navigate through the slideshow) -->
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+            </div>
+        </div>
+
         <!-- About section-->
          <div class="row" id="About">
             <!-- Left column-->
             <div class="column_2">
-                <img src="assets/headshot.png" alt="Code image" class="">
+                <img src="assets/Development.jpg" alt="Code image" class="">
             </div>
             <!-- Right column -->
             <div class="column_1">
@@ -79,11 +137,9 @@
             <!-- Left column -->
             <div class="column_1">
                 <h1>GitHub</h1>
-                <p>
-                    You can view coding projects on my GitHub profile here:
-                    <br>
-                    <p class="center"><a href="https://github.com/ianemcallister" target="_blank">Ian McAllister</a></p>
-                </p>
+                <p>You can view coding projects on my GitHub profile here:</p>
+                <p class="center"><a href="https://github.com/ianemcallister" target="_blank">Ian McAllister</a></p>
+
             </div>
             <!-- Right column -->
             <div class="column_2">
@@ -93,47 +149,31 @@
             </div>
         </div>
 
-        <!-- Content section -->
+        <!-- Contact section -->
         <div class="row" id="Contact">
-            <!-- Contact image, left column -->
-            <div class="column_2 column_tall">
-                <img src="assets/code.jpg" alt="Code image" class="">
-            </div>
-            <!-- Contact form, right column -->
-            <div class="column_1 column_tall">
-                <h1>Contact</h1>
-                <!-- This specifies wehre and how to send the form data -->
-                <form action="https://formspree.io/f/mvgpngja" method="POST">
-                    <!-- Name -->
-                    <label for="name">Name:</label>
-                    <input  type="text" 
-                            placeholder="Please enter your full name here."
-                            id="name"
-                            name="name">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm" ondblclick="closeForm()">
+                <form action="https://formspree.io/f/mvgpngja" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name"><strong>Name</strong></label>
+                        <input type="text" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><strong>Phone</strong></label>
+                        <input type="text" placeholder="Type your phone number here" name="phone">
+                    <label for="email"><strong>Email</strong></label>
+                        <input type="text" placeholder="Type your email address here" name="email" required>  
+                    <label for="message"><strong>Message</strong></label>
+                        <input type="text" placeholder="Type your message here" name="message">
                     
-                    <!-- Email -->
-                    <label for="email">E-mail:</label>
-                    <input  type="text"
-                            id="email"
-                            name="email"
-                            placeholder="Please enter your email here.">
-
-                    <!-- Message -->
-                    <label for="message">Message:</label>
-                    <textarea   name="message" 
-                                id="contactMessage"
-                                placeholder="Enter a message here">
-                    </textarea>
-                    <input type="submit" value="Submit" class="btn">
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
 
         <!-- Footer section -->
         <footer>
-            <p>
-                <p class="center">&copy; Ian McAllister</p>
-            </p>
+            <p class="center">&copy; Ian McAllister</p>
         </footer>
+        <script src="js/script.js"></script>
     </body>
 </html>
